@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Dari Micola</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body
+    style="background-color: #f0f8ff;"
+    class="flex justify-center h-screen items-center"
+  >
+    <div
+      class="bg-white border px-10 py-8 border-4 border-gray-300 shadow-lg shadow-blue-300 rounded-xl text-center animate__animated animate__backInDown m-8 w-80"
+      id="kartu"
+    >
+      <h1 class="text-3xl">Happy Birthday</h1>
+      <h1
+        class="text-4xl text-blue-500 font-bold animate__animated animate__pulse animate__infinite"
+      >
+        Mas
+      </h1>
+      <!-- Foto ditambahkan di sini -->
+      <img
+        src="c:\Users\user\Documents\ultah\dani.PNG"
+        alt="dani.PNG"
+        class="w-32 h-32 rounded-full mx-auto mt-4 border-4 border-blue-300 animate__animated animate__fadeIn"
+      />
+      <button
+        class="p-2 bg-blue-600 text-white rounded mt-5 hover:bg-blue-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+        onclick="ubahKartu()"
+      >
+        Klik Disini Ya!
+      </button>
+    </div>
+
+    <!-- Lagu dengan kontrol manual untuk handphone -->
+    <audio id="hbd" controls loop class="mt-4">
+      <source src="c:\Users\user\Documents\ultah\hbd.mp3" type="audio/mpeg">  <!-- Ganti dengan URL lagu ulang tahun online; contoh gratis -->
+      Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+      let kartu = document.getElementById("kartu");
+      let lagu = document.getElementById("hbd");  <!-- Diperbaiki: ID cocok dengan "hbd" -->
+
+      function ubahKartu() {
+        // Putar lagu saat tombol diklik
+        lagu.play().catch( RemotePlayback=> console.log("Autoplay diblokir, gunakan kontrol manual: ",RemotePlayback));
+        
+        kartu.innerHTML = `    <h1 class="font-semibold text-wrap animate__animated animate__zoomIn">
+      Selamat ulang tahun, Mas 🤍
+      Rasanya masih aja nggak percaya, orang yang dulu cuma teman SMP, sekarang tumbuh sejauh ini.
+      Dari masa bercanda sampai kamu berjuang buat masa depan, aku lihat semuanya, dan aku bangga banget.
+      Semoga hidupmu selalu penuh hal baik, dan semoga aku tetap bisa ada di setiap langkahmu. 🎂✨
+    </h1>
+      - From : Adik yang IMUTT (lail) -
+    </h2>
+    <button
+      class="p-2 bg-slate-600 text-white rounded mt-5 hover:bg-slate-900 transition ease-in w-full animate__animated animate__delay-1s animate__tada"
+      onclick="refresh()"
+    >
+      Tutup
+    </button>
+    `;
+      }
+      function refresh() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html
